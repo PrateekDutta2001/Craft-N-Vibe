@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft-N-Vibe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- <span class="logo-icon">🎯</span> -->
+                <span class="logo-text">Craft-N-Vibe</span>
+            </div>
+            <div class="nav-controls">
+                <button class="nav-link" onclick="scrollToSection('home')">Home</button>
+                <button class="nav-link" onclick="scrollToSection('beginner')">Beginner</button>
+                <button class="nav-link" onclick="scrollToSection('intermediate')">Intermediate</button>
+                <button class="nav-link" onclick="scrollToSection('advanced')">Advanced</button>
+                <button class="nav-link" onclick="scrollToSection('examples')">Examples</button>
+                <button class="nav-link" onclick="scrollToSection('playground')">Playground</button>
+                <div class="text-size-control">
+                    <button onclick="adjustTextSize('decrease')" class="size-btn" title="Decrease text size">A-</button>
+                    <button onclick="adjustTextSize('reset')" class="size-btn" title="Reset text size">A</button>
+                    <button onclick="adjustTextSize('increase')" class="size-btn" title="Increase text size">A+</button>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="nav-link" onclick="scrollToSection('home')">Home</button>
+        <button class="nav-link" onclick="scrollToSection('beginner')">Beginner</button>
+        <button class="nav-link" onclick="scrollToSection('intermediate')">Intermediate</button>
+        <button class="nav-link" onclick="scrollToSection('advanced')">Advanced</button>
+        <button class="nav-link" onclick="scrollToSection('examples')">Examples</button>
+        <button class="nav-link" onclick="scrollToSection('playground')">Playground</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Master the Art of AI Prompting</h1>
+            <p class="hero-subtitle">Learn how to communicate effectively with AI assistants like ChatGPT, Claude, Grok, and more</p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Skill Levels</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Techniques</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Examples</div>
+                </div>
+            </div>
+            <button class="cta-button" onclick="scrollToSection('beginner')">Start Learning →</button>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="section-title">Why Prompting Matters</h2>
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <div class="intro-icon">💡</div>
+                    <h3>Get Better Results</h3>
+                    <p>Learn to craft prompts that yield accurate, relevant, and useful responses from AI assistants.</p>
+                </div>
+                <div class="intro-card">
+                    <div class="intro-icon">⚡</div>
+                    <h3>Save Time</h3>
+                    <p>Stop iterating endlessly. Get the right answer on the first try with well-structured prompts.</p>
+                </div>
+                <div class="intro-card">
+                    <div class="intro-icon">🎨</div>
+                    <h3>Unlock Creativity</h3>
+                    <p>Discover advanced techniques to push AI capabilities and generate innovative solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beginner Section -->
+    <section id="beginner" class="content-section">
+        <div class="container">
+            <div class="level-badge beginner-badge">Beginner Level</div>
+            <h2 class="section-title">Foundation: Prompting Basics</h2>
+            
+            <div class="content-card">
+                <h3>1. Be Clear and Specific</h3>
+                <p>The most fundamental rule of prompting is clarity. Vague prompts lead to vague responses.</p>
+                <div class="example-box bad">
+                    <div class="example-label">❌ Poor Prompt</div>
+                    <code>Tell me about dogs</code>
+                </div>
+                <div class="example-box good">
+                    <div class="example-label">✅ Better Prompt</div>
+                    <code>Provide a comprehensive overview of Golden Retrievers, including their temperament, exercise needs, common health issues, and suitability for families with children.</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>2. Provide Context</h3>
+                <p>Help the AI understand your background and what you're trying to achieve.</p>
+                <div class="example-box bad">
+                    <div class="example-label">❌ Poor Prompt</div>
+                    <code>How do I fix this?</code>
+                </div>
+                <div class="example-box good">
+                    <div class="example-label">✅ Better Prompt</div>
+                    <code>I'm a beginner web developer working on a React project. My component won't render and I'm getting a "Cannot read property of undefined" error. Here's my code: [code snippet]. How can I fix this?</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>3. Specify the Format</h3>
+                <p>Tell the AI how you want the response structured.</p>
+                <div class="example-box bad">
+                    <div class="example-label">❌ Poor Prompt</div>
+                    <code>Give me tips for studying</code>
+                </div>
+                <div class="example-box good">
+                    <div class="example-label">✅ Better Prompt</div>
+                    <code>Provide 10 evidence-based study tips for college students. Format as a numbered list with each tip including: a brief title, detailed explanation (2-3 sentences), and one practical example.</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>4. Set Constraints</h3>
+                <p>Define boundaries like length, complexity, or target audience.</p>
+                <div class="example-box bad">
+                    <div class="example-label">❌ Poor Prompt</div>
+                    <code>Explain quantum computing</code>
+                </div>
+                <div class="example-box good">
+                    <div class="example-label">✅ Better Prompt</div>
+                    <code>Explain quantum computing to a 12-year-old using simple analogies. Keep it under 200 words and avoid technical jargon.</code>
+                </div>
+            </div>
+
+            <div class="tips-box">
+                <h4>🎯 Beginner Quick Tips</h4>
+                <ul>
+                    <li>Always ask yourself: "What exactly do I need to know?"</li>
+                    <li>Include relevant details about your situation</li>
+                    <li>Specify desired output format (list, paragraph, table, code)</li>
+                    <li>Mention your skill level when relevant</li>
+                    <li>Don't hesitate to ask follow-up questions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intermediate Section -->
+    <section id="intermediate" class="content-section">
+        <div class="container">
+            <div class="level-badge intermediate-badge">Intermediate Level</div>
+            <h2 class="section-title">Advanced Techniques: Elevate Your Prompts</h2>
+            
+            <div class="content-card">
+                <h3>1. Role Assignment</h3>
+                <p>Assign the AI a specific role or persona to get more targeted responses.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Effective Prompt</div>
+                    <code>You are an experienced marketing consultant specializing in e-commerce. A small business owner wants to launch an online store selling handmade jewelry. What are the top 5 marketing strategies they should implement in their first 3 months?</code>
+                </div>
+                <div class="technique-note">
+                    <strong>Why it works:</strong> Role assignment helps the AI adopt the appropriate knowledge base, tone, and perspective.
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>2. Chain of Thought Prompting</h3>
+                <p>Ask the AI to think step-by-step for better reasoning and problem-solving.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Effective Prompt</div>
+                    <code>I need to calculate the ROI of a marketing campaign. Revenue was $50,000, the campaign cost $8,000, and normal monthly revenue without campaigns is $35,000. Please solve this step-by-step, explaining your reasoning at each stage.</code>
+                </div>
+                <div class="technique-note">
+                    <strong>Why it works:</strong> Breaking down complex problems into steps reduces errors and makes the logic transparent.
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>3. Few-Shot Learning</h3>
+                <p>Provide examples of what you want to guide the AI's output.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Effective Prompt</div>
+                    <code>Convert the following product descriptions to engaging social media posts. Use emojis and hashtags.
+
+Example 1:
+Product: Organic Green Tea
+Post: Start your morning right! ☕ Our premium organic green tea is packed with antioxidants and delivers smooth, refreshing flavor. #OrganicTea #HealthyLiving #MorningRitual
+
+Example 2:
+Product: Yoga Mat
+Post: Transform your practice! 🧘‍♀️ Ultra-grip, eco-friendly yoga mat perfect for beginners and pros alike. Find your balance today. #YogaLife #Wellness #EcoFriendly
+
+Now convert this:
+Product: Wireless Earbuds</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>4. Iterative Refinement</h3>
+                <p>Build on previous responses to narrow down to exactly what you need.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Conversation Flow</div>
+                    <code>Prompt 1: "Give me ideas for a blog about sustainable living"
+Response: [AI provides 10 general ideas]
+
+Prompt 2: "Great! Focus on idea #3 about zero-waste kitchens. Give me 5 specific article topics"
+Response: [AI provides specific topics]
+
+Prompt 3: "Perfect! Write an outline for the first topic, including SEO keywords"</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>5. Specify Constraints & Requirements</h3>
+                <p>Use structured requirements to get precisely what you need.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Effective Prompt</div>
+                    <code>Write a professional email with these requirements:
+- Purpose: Request a meeting to discuss project delays
+- Tone: Professional but friendly
+- Length: 150-200 words
+- Include: Acknowledgment of the issue, proposed solutions, and specific meeting time options
+- Avoid: Blame or negative language
+- Recipient: Senior project manager</code>
+                </div>
+            </div>
+
+            <div class="tips-box">
+                <h4>🎯 Intermediate Quick Tips</h4>
+                <ul>
+                    <li>Use role assignment for specialized knowledge</li>
+                    <li>Request step-by-step reasoning for complex problems</li>
+                    <li>Provide examples to guide output style and format</li>
+                    <li>Build conversations iteratively for better refinement</li>
+                    <li>Structure requirements using bullet points or lists</li>
+                    <li>Combine multiple techniques for powerful results</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Section -->
+    <section id="advanced" class="content-section">
+        <div class="container">
+            <div class="level-badge advanced-badge">Advanced Level</div>
+            <h2 class="section-title">Expert Strategies: Mastering AI Interaction</h2>
+            
+            <div class="content-card">
+                <h3>1. Multi-Perspective Analysis</h3>
+                <p>Request analysis from multiple viewpoints for comprehensive understanding.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Expert Prompt</div>
+                    <code>Analyze the decision to implement a 4-day work week from three distinct perspectives:
+
+1. As a CFO concerned with financial implications and productivity metrics
+2. As an HR director focused on employee satisfaction and retention
+3. As an operations manager dealing with scheduling and workflow
+
+For each perspective, provide:
+- Main concerns (3-4 points)
+- Potential benefits
+- Risk mitigation strategies
+- Key metrics to monitor
+
+Then synthesize these perspectives into actionable recommendations.</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>2. Constrained Creative Problem Solving</h3>
+                <p>Use creative constraints to generate innovative solutions.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Expert Prompt</div>
+                    <code>I need innovative solutions for reducing food waste in restaurants. Use the SCAMPER technique (Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse) to generate ideas. 
+
+For each SCAMPER element:
+- Propose 2 specific, actionable ideas
+- Rate feasibility (1-5)
+- Estimate implementation cost (Low/Medium/High)
+- Identify potential obstacles
+
+Focus on solutions that could be implemented within 3 months with a budget under $5,000.</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>3. Socratic Questioning</h3>
+                <p>Have the AI guide your thinking through strategic questions.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Expert Prompt</div>
+                    <code>I'm considering pivoting my SaaS product from B2B to B2C. Instead of giving me direct advice, act as a business strategist and ask me 10 probing questions that will help me think through this decision critically. 
+
+Structure your questions to cover:
+- Market understanding (3 questions)
+- Financial implications (2 questions)
+- Operational changes (2 questions)
+- Risk assessment (3 questions)
+
+After I answer, help me identify gaps in my thinking.</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>4. Structured Debate & Devil's Advocate</h3>
+                <p>Challenge ideas by having the AI argue multiple positions.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Expert Prompt</div>
+                    <code>Topic: "Companies should use AI to screen job applications"
+
+Conduct a structured debate with these requirements:
+
+Position 1: Argue FOR this practice
+- Present 4 strong arguments with supporting evidence
+- Address common objections preemptively
+
+Position 2: Argue AGAINST this practice
+- Present 4 strong counterarguments
+- Highlight ethical and practical concerns
+
+Then:
+- Identify the strongest argument from each side
+- Propose a balanced middle-ground approach
+- Suggest criteria for when AI screening is/isn't appropriate
+
+Use academic sources and real-world examples where applicable.</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>5. Meta-Prompting</h3>
+                <p>Ask the AI to help you create better prompts.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Expert Prompt</div>
+                    <code>I want to ask an AI to help me create a content marketing strategy for a new productivity app. Before I do that, help me craft the optimal prompt by:
+
+1. Analyzing what information I should include
+2. Identifying what context would be most valuable
+3. Suggesting the best structure for my prompt
+4. Recommending specific constraints or requirements to set
+5. Proposing follow-up questions I should prepare
+
+Then provide me with the finalized, optimized prompt I should use.</code>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>6. Systematic Framework Application</h3>
+                <p>Apply established frameworks for structured analysis.</p>
+                <div class="example-box good">
+                    <div class="example-label">✅ Expert Prompt</div>
+                    <code>Analyze my startup idea using multiple business frameworks:
+
+Idea: A mobile app that uses AI to create personalized meal plans based on users' grocery store loyalty cards and existing inventory.
+
+Frameworks to apply:
+1. Business Model Canvas - Complete all 9 building blocks
+2. Porter's Five Forces - Analyze competitive dynamics
+3. SWOT Analysis - Internal and external factors
+4. Value Proposition Canvas - Customer jobs, pains, gains
+5. Market Sizing - TAM, SAM, SOM estimation
+
+For each framework:
+- Provide thorough analysis
+- Highlight critical insights
+- Flag red flags or concerns
+
+Conclude with an executive summary scoring viability (1-10) with justification.</code>
+                </div>
+            </div>
+
+            <div class="tips-box">
+                <h4>🎯 Advanced Quick Tips</h4>
+                <ul>
+                    <li>Request multi-perspective analysis for complex decisions</li>
+                    <li>Use established frameworks (SWOT, SCAMPER, etc.) for structure</li>
+                    <li>Employ Socratic questioning to explore your own thinking</li>
+                    <li>Set up debates to examine issues from all angles</li>
+                    <li>Use meta-prompting to optimize your prompts</li>
+                    <li>Chain prompts together for complex multi-stage projects</li>
+                    <li>Specify expertise levels, citation requirements, and verification needs</li>
+                    <li>Combine multiple techniques for maximum effectiveness</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="content-section examples-section">
+        <div class="container">
+            <h2 class="section-title">Real-World Examples</h2>
+            <p class="section-subtitle">Click each category to see before/after prompt examples</p>
+            
+            <div class="examples-grid">
+                <div class="example-category" onclick="toggleExample('coding')">
+                    <div class="category-header">
+                        <span class="category-icon">💻</span>
+                        <h3>Coding & Development</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="category-content" id="coding">
+                        <div class="comparison-box">
+                            <div class="comparison-item poor">
+                                <h4>❌ Weak Prompt</h4>
+                                <code>How do I make a login page?</code>
+                            </div>
+                            <div class="comparison-item strong">
+                                <h4>✅ Strong Prompt</h4>
+                                <code>I'm building a React application and need to create a secure login page. Requirements:
+- Username and password fields with validation
+- "Remember me" checkbox
+- Password visibility toggle
+- Error handling for failed login attempts
+- JWT token storage on successful login
+- Responsive design for mobile and desktop
+- Accessibility compliance (WCAG 2.1)
+
+Please provide the complete React component code with comments, including form validation logic and API integration structure.</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-category" onclick="toggleExample('writing')">
+                    <div class="category-header">
+                        <span class="category-icon">✍️</span>
+                        <h3>Content Writing</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="category-content" id="writing">
+                        <div class="comparison-box">
+                            <div class="comparison-item poor">
+                                <h4>❌ Weak Prompt</h4>
+                                <code>Write a blog post about coffee</code>
+                            </div>
+                            <div class="comparison-item strong">
+                                <h4>✅ Strong Prompt</h4>
+                                <code>Write a 1200-word blog post titled "The Science of Coffee: How Brewing Methods Affect Taste"
+
+Target Audience: Coffee enthusiasts who want to improve their home brewing
+Tone: Informative yet conversational, enthusiastic but not pretentious
+SEO Keywords: coffee brewing methods, coffee taste, home brewing, coffee science
+
+Structure:
+- Engaging introduction with a surprising fact
+- 5 main sections covering different brewing methods
+- Each section should explain the science and optimal parameters
+- Include practical tips for home brewers
+- Comparison table of brewing methods
+- Conclusion with actionable recommendations
+
+Additional requirements:
+- Use subheadings for each section
+- Include 2-3 internal linking opportunities
+- Add a compelling meta description (155 characters)</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-category" onclick="toggleExample('business')">
+                    <div class="category-header">
+                        <span class="category-icon">📊</span>
+                        <h3>Business Strategy</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="category-content" id="business">
+                        <div class="comparison-box">
+                            <div class="comparison-item poor">
+                                <h4>❌ Weak Prompt</h4>
+                                <code>Give me marketing ideas</code>
+                            </div>
+                            <div class="comparison-item strong">
+                                <h4>✅ Strong Prompt</h4>
+                                <code>I need a comprehensive digital marketing strategy for Q1 2025.
+
+Business Context:
+- B2B SaaS company providing project management software
+- Target: Small to medium businesses (10-200 employees)
+- Current MRR: $50K, Goal: $100K by end of Q1
+- Marketing budget: $15K/month
+- Team: 1 marketer, 1 content creator
+
+Request:
+Create a detailed marketing plan including:
+1. Top 3 channel priorities with budget allocation
+2. Content calendar framework
+3. Specific campaign ideas with expected ROI
+4. KPIs to track for each channel
+5. Quick wins we can implement in first 2 weeks
+6. Longer-term strategies for months 2-3
+
+Format: Executive summary + detailed tactics for each channel</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-category" onclick="toggleExample('education')">
+                    <div class="category-header">
+                        <span class="category-icon">📚</span>
+                        <h3>Education & Learning</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="category-content" id="education">
+                        <div class="comparison-box">
+                            <div class="comparison-item poor">
+                                <h4>❌ Weak Prompt</h4>
+                                <code>Teach me Python</code>
+                            </div>
+                            <div class="comparison-item strong">
+                                <h4>✅ Strong Prompt</h4>
+                                <code>Create a personalized Python learning plan for me.
+
+My Background:
+- Experience: Beginner programmer (know basic HTML/CSS)
+- Time available: 1 hour/day, 5 days/week
+- Learning goal: Build a web scraper to collect job postings
+- Timeline: 8 weeks
+- Preferred learning style: Project-based with practical examples
+
+Plan Requirements:
+1. Week-by-week curriculum breakdown
+2. Specific topics to cover each week
+3. Recommended resources (free preferred)
+4. Daily practice exercises (15-20 minutes)
+5. Weekly mini-projects that build toward final goal
+6. Common pitfalls to avoid at each stage
+7. Checkpoints to assess progress
+
+Additional:
+- Include tips for staying motivated
+- Suggest communities/forums for getting help</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-category" onclick="toggleExample('creative')">
+                    <div class="category-header">
+                        <span class="category-icon">🎨</span>
+                        <h3>Creative Projects</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="category-content" id="creative">
+                        <div class="comparison-box">
+                            <div class="comparison-item poor">
+                                <h4>❌ Weak Prompt</h4>
+                                <code>Give me story ideas</code>
+                            </div>
+                            <div class="comparison-item strong">
+                                <h4>✅ Strong Prompt</h4>
+                                <code>Generate 5 unique short story concepts with detailed premises.
+
+Genre: Science fiction with philosophical themes
+Tone: Thought-provoking, character-driven
+Inspiration: Stories like Black Mirror, Ex Machina, Arrival
+
+Story Requirements:
+Each concept should include:
+- Premise (3-4 sentences)
+- Main character profile (motivation, conflict, arc)
+- Central philosophical question explored
+- Unique sci-fi element or technology
+- Key plot points (beginning, middle, end)
+- Themes and undertones
+- Potential twist or unexpected element
+
+Additional preferences:
+- Avoid apocalyptic scenarios
+- Include diverse characters
+- Set in near-future (next 50 years)
+- Focus on human relationships and ethics</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-category" onclick="toggleExample('data')">
+                    <div class="category-header">
+                        <span class="category-icon">📈</span>
+                        <h3>Data Analysis</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="category-content" id="data">
+                        <div class="comparison-box">
+                            <div class="comparison-item poor">
+                                <h4>❌ Weak Prompt</h4>
+                                <code>Analyze this data</code>
+                            </div>
+                            <div class="comparison-item strong">
+                                <h4>✅ Strong Prompt</h4>
+                                <code>Perform a comprehensive analysis of my e-commerce store data.
+
+Data Context:
+- Time period: Last 6 months (Jan-June 2024)
+- Total transactions: 3,547
+- Revenue: $287,450
+- Product categories: Electronics, Home, Fashion, Sports
+
+Analysis Requests:
+1. Sales Trends - Monthly revenue trends with growth rates
+2. Product Performance - Top 10 products by revenue
+3. Customer Insights - Geographic distribution
+4. Operational Metrics - Average order value trends
+5. Recommendations - Product inventory recommendations
+
+Output format:
+- Executive summary (3-4 key findings)
+- Detailed analysis for each section
+- Visualization suggestions for each finding
+- Prioritized action items with expected impact</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Playground -->
+    <section id="playground" class="playground-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Prompt Playground</h2>
+            <p class="section-subtitle">Practice crafting better prompts with real-time feedback</p>
+            
+            <div class="playground-container">
+                <div class="playground-tabs">
+                    <button class="playground-tab active" onclick="switchTab('builder')">Prompt Builder</button>
+                    <button class="playground-tab" onclick="switchTab('analyzer')">Prompt Analyzer</button>
+                    <button class="playground-tab" onclick="switchTab('templates')">Templates</button>
+                </div>
+
+                <!-- Prompt Builder Tab -->
+                <div id="builder" class="playground-content active">
+                    <div class="builder-grid">
+                        <div class="builder-section">
+                            <h3>Build Your Prompt</h3>
+                            <div class="form-group">
+                                <label>1. What's your goal?</label>
+                                <input type="text" id="goal" placeholder="e.g., Write a blog post, Debug code, Create a marketing plan" oninput="updatePrompt()">
+                            </div>
+                            <div class="form-group">
+                                <label>2. Add context (who, what, when, where)</label>
+                                <textarea id="context" rows="3" placeholder="e.g., I'm a freelance designer working on a portfolio website..." oninput="updatePrompt()"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>3. Specify requirements or constraints</label>
+                                <textarea id="requirements" rows="3" placeholder="e.g., Must be mobile-responsive, Under 500 words..." oninput="updatePrompt()"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>4. Desired output format</label>
+                                <select id="format" onchange="updatePrompt()">
+                                    <option value="">Select format...</option>
+                                    <option value="detailed paragraph">Detailed paragraph</option>
+                                    <option value="numbered list">Numbered list</option>
+                                    <option value="bullet points">Bullet points</option>
+                                    <option value="code with comments">Code with comments</option>
+                                    <option value="step-by-step guide">Step-by-step guide</option>
+                                    <option value="table">Table</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>5. Skill level/target audience</label>
+                                <select id="audience" onchange="updatePrompt()">
+                                    <option value="">Select audience...</option>
+                                    <option value="complete beginner">Complete beginner</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="expert">Expert</option>
+                                    <option value="general audience">General audience</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="builder-output">
+                            <h3>Your Generated Prompt</h3>
+                            <div class="generated-prompt" id="generatedPrompt">
+                                <p class="placeholder">Fill in the fields on the left to generate your prompt...</p>
+                            </div>
+                            <button class="copy-btn" onclick="copyPrompt()" id="copyBtn" style="display:none;">📋 Copy Prompt</button>
+                            <div class="prompt-quality" id="promptQuality" style="display:none;">
+                                <h4>Prompt Quality Score</h4>
+                                <div class="quality-bar">
+                                    <div class="quality-fill" id="qualityFill"></div>
+                                </div>
+                                <p id="qualityText"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prompt Analyzer Tab -->
+                <div id="analyzer" class="playground-content">
+                    <div class="analyzer-container">
+                        <h3>Analyze Your Prompt</h3>
+                        <p>Paste your prompt below to get feedback on how to improve it</p>
+                        <textarea id="analyzerInput" rows="8" placeholder="Paste your prompt here..."></textarea>
+                        <button class="analyze-btn" onclick="analyzePrompt()">Analyze Prompt</button>
+                        <div id="analysisResults" class="analysis-results"></div>
+                    </div>
+                </div>
+
+                <!-- Templates Tab -->
+                <div id="templates" class="playground-content">
+                    <h3>Prompt Templates</h3>
+                    <p>Click any template to copy it to your clipboard</p>
+                    <div class="templates-grid">
+                        <div class="template-card" onclick="copyTemplate('code-review')">
+                            <h4>🔍 Code Review</h4>
+                            <p>Get comprehensive code feedback</p>
+                            <code class="template-preview">Review this [LANGUAGE] code for [PURPOSE]. Check for: bugs, performance issues, security vulnerabilities, best practices, and code readability. Provide specific suggestions for improvement...</code>
+                        </div>
+                        <div class="template-card" onclick="copyTemplate('content-writing')">
+                            <h4>✍️ Content Writing</h4>
+                            <p>Create structured written content</p>
+                            <code class="template-preview">Write a [LENGTH]-word [CONTENT TYPE] about [TOPIC] for [AUDIENCE]. Tone: [TONE]. Include: [REQUIREMENTS]. Structure: [STRUCTURE]...</code>
+                        </div>
+                        <div class="template-card" onclick="copyTemplate('problem-solving')">
+                            <h4>🧩 Problem Solving</h4>
+                            <p>Break down complex problems</p>
+                            <code class="template-preview">I'm facing this problem: [PROBLEM DESCRIPTION]. Context: [RELEVANT CONTEXT]. Constraints: [LIMITATIONS]. Please analyze step-by-step and propose 3-5 solutions with pros/cons...</code>
+                        </div>
+                        <div class="template-card" onclick="copyTemplate('learning')">
+                            <h4>📚 Learning Plan</h4>
+                            <p>Create structured learning paths</p>
+                            <code class="template-preview">Create a learning plan for [SKILL/TOPIC]. My current level: [LEVEL]. Goal: [SPECIFIC GOAL]. Time available: [TIME]. Include: curriculum, resources, practice exercises, milestones...</code>
+                        </div>
+                        <div class="template-card" onclick="copyTemplate('debugging')">
+                            <h4>🐛 Debugging Help</h4>
+                            <p>Get help fixing code issues</p>
+                            <code class="template-preview">I'm getting this error: [ERROR MESSAGE] in my [LANGUAGE] code. Context: [WHAT YOU'RE TRYING TO DO]. Here's the code: [CODE]. What I've tried: [ATTEMPTS]...</code>
+                        </div>
+                        <div class="template-card" onclick="copyTemplate('strategy')">
+                            <h4>🎯 Strategy Planning</h4>
+                            <p>Develop business strategies</p>
+                            <code class="template-preview">Develop a [TIMEFRAME] strategy for [OBJECTIVE]. Current situation: [CONTEXT]. Resources: [BUDGET/TEAM]. Include: analysis, goals, tactics, KPIs, risks, timeline...</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Mistakes Section -->
+    <section class="mistakes-section">
+        <div class="container">
+            <h2 class="section-title">Common Prompting Mistakes to Avoid</h2>
+            <div class="mistakes-grid">
+                <div class="mistake-card">
+                    <div class="mistake-icon">🚫</div>
+                    <h3>Being Too Vague</h3>
+                    <p>"Help me with my website" → Doesn't specify what kind of help or what aspect of the website.</p>
+                    <div class="mistake-fix">✅ Fix: Be specific about the problem, context, and desired outcome.</div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-icon">🚫</div>
+                    <h3>No Context</h3>
+                    <p>"Is this good?" → The AI has no idea what "this" refers to or criteria for "good."</p>
+                    <div class="mistake-fix">✅ Fix: Always provide necessary background information and evaluation criteria.</div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-icon">🚫</div>
+                    <h3>Assuming Knowledge</h3>
+                    <p>"Fix the bug" → Assumes the AI knows about your codebase and the bug.</p>
+                    <div class="mistake-fix">✅ Fix: Include relevant code, error messages, and environment details.</div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-icon">🚫</div>
+                    <h3>Multiple Unrelated Questions</h3>
+                    <p>"How do I bake bread and fix my router?" → Jumps between unrelated topics.</p>
+                    <div class="mistake-fix">✅ Fix: Ask one question at a time or clearly separate distinct topics.</div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-icon">🚫</div>
+                    <h3>No Format Specification</h3>
+                    <p>"Tell me about marketing" → Could result in any format or depth of response.</p>
+                    <div class="mistake-fix">✅ Fix: Specify if you want a list, paragraph, table, steps, etc.</div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-icon">🚫</div>
+                    <h3>Ignoring Constraints</h3>
+                    <p>Not mentioning limitations like budget, time, skill level, or compatibility.</p>
+                    <div class="mistake-fix">✅ Fix: Always mention relevant constraints upfront.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices Summary -->
+    <section class="best-practices-section">
+        <div class="container">
+            <h2 class="section-title">Prompting Best Practices Checklist</h2>
+            <div class="checklist-container">
+                <div class="checklist-column">
+                    <h3>Before You Prompt</h3>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">Define your specific goal clearly</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">Gather all relevant context and information</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Identify your constraints (time, budget, skill level)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">Decide on desired output format</label>
+                    </div>
+                </div>
+                <div class="checklist-column">
+                    <h3>Writing Your Prompt</h3>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">Use clear, specific language</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">Include all necessary context</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check7">
+                        <label for="check7">Specify format and structure expectations</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check8">
+                        <label for="check8">State constraints and requirements</label>
+                    </div>
+                </div>
+                <div class="checklist-column">
+                    <h3>After Getting Results</h3>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check9">
+                        <label for="check9">Review if the response meets your needs</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check10">
+                        <label for="check10">Ask follow-up questions for clarification</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check11">
+                        <label for="check11">Refine your prompt if needed</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check12">
+                        <label for="check12">Save effective prompts for future use</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Craft-N-Vibe</h3>
+                    <p>Master the art of AI prompting and unlock the full potential of AI assistants.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#beginner">Beginner</a>
+                    <a href="#intermediate">Intermediate</a>
+                    <a href="#advanced">Advanced</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#examples">Examples</a>
+                    <a href="#playground">Playground</a>
+                    <a href="#mistakes">Common Mistakes</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Craft-N-Vibe. Empowering better AI interactions. Developed by: Prateek Dutta</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
