@@ -1,0 +1,3 @@
+Create an end to end interactive & attractive web application with adjustable device friendly screen & content size.
+
+The application will entirely focus on Prompting. So basically i want to guide people on best way to prompt so that you can get better & appropiate result to teh query from ai agents like chatgpt/claud/grok or any other as well.
